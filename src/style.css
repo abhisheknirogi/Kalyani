@@ -316,3 +316,22 @@ section {
     display: flex;
   }
 }
+.about-section {
+  padding: 80px 20px;
+  background-color: #fdf7f1; /* same cream tone */
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 36px;
+  color: #7a1f2b;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+}

@@ -4,6 +4,14 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState("home");
 
+  const links = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "services", label: "Services" },
+    { id: "gallery", label: "Gallery" },
+    { id: "contact", label: "Contact" },
+  ];
+
   // Close mobile menu on scroll
   useEffect(() => {
     const handleScroll = () => setIsOpen(false);
@@ -11,12 +19,29 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const links = [
-    { id: "home", label: "Home" },
-    { id: "services", label: "Services" },
-    { id: "gallery", label: "Gallery" },
-    { id: "contact", label: "Contact" },
-  ];
+  // ✅ Active link on scroll
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+
+    const handleScroll = () => {
+      let current = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        if (window.scrollY >= sectionTop - sectionHeight / 3) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      setActive(current || "home");
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav className="navbar">

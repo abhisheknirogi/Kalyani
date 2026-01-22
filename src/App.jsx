@@ -1,5 +1,6 @@
 import "./style.css";
 import Navbar from "./components/Navbar";
+import About from "./components/About";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Gallery from "./components/Gallery";
@@ -14,6 +15,9 @@ function App() {
       <main>
         <section id="home">
           <Hero />
+        </section>
+        <section id="about">
+          <About/>
         </section>
 
         <section id="services">
