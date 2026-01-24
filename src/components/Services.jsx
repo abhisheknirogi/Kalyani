@@ -1,6 +1,6 @@
 import React from "react";
 
-const whatsappNumber = "9380132306"; // 🔁 replace with real number
+const whatsappNumber = "919380132306"; // 🔁 replace with real number
 
 const services = [
   {

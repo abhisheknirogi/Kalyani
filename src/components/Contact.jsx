@@ -5,7 +5,7 @@ export default function Contact() {
         <h2 className="section-title">Contact</h2>
         <a
           className="btn"
-          href="https://wa.me/9380132306?text=Hi,%20I%20want%20to%20book%20a%20saree%20draping%20service"
+          href="https://wa.me/919380132306?text=Hi,%20I%20want%20to%20book%20a%20saree%20draping%20service"
         >
           Book on WhatsApp
         </a>
