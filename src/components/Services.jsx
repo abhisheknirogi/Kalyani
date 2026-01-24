@@ -67,15 +67,7 @@ const services = [
       "Smoothening",
     ],
   },
-  {
-    category: "Hair Treatments",
-    items: [
-      "Spa Treatments",
-      "Volumizing",
-      "Advanced Hair Moisturising",
-      "Scalp Treatments",
-    ],
-  },
+  
 ];
 
 const createWhatsAppLink = (serviceName) => {
