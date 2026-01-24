@@ -46,7 +46,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="container navbar-content">
-        <h2 className="brand">Saree Draping</h2>
+        <h2 className="brand">Blooms and Bloosom</h2>
 
         <div className={`nav-links ${isOpen ? "open" : ""}`}>
           {links.map((link) => (
