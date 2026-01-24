@@ -1,5 +1,7 @@
 import React from "react";
 
+const whatsappNumber = "919876543210"; // 🔁 replace with real number
+
 const services = [
   {
     category: "Facials & Rituals",
@@ -77,34 +79,41 @@ const services = [
   },
 ];
 
+const createWhatsAppLink = (serviceName) => {
+  const message = `Hello, I would like to book the "${serviceName}" service. Please share the details.`;
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    message
+  )}`;
+};
+
 const Services = () => {
   return (
     <section id="services">
       <div className="container">
         <h2 className="section-title">Our Salon Services</h2>
         <p className="section-subtitle">
-          All salon services are available exclusively at our studio to ensure
-          professional care, hygiene, and best results.
+          All salon services are available exclusively at our studio.
         </p>
 
         <div className="services-grid">
           {services.map((service, index) => (
             <div className="service-card" key={index}>
               <h3>{service.category}</h3>
+
               <ul>
                 {service.items.map((item, i) => (
-                  <li key={i}>{item}</li>
+                  <li key={i}>
+                    <a
+                      href={createWhatsAppLink(item)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="service-link"
+                    >
+                      {item}
+                    </a>
+                  </li>
                 ))}
               </ul>
-
-              <a
-                href="https://wa.me/9380132306"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-small"
-              >
-                Book Appointment
-              </a>
             </div>
           ))}
         </div>
