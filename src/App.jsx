@@ -5,19 +5,22 @@ import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
+import FlowerAnimation from "./components/FlowerAnimation"; // ✔️ Add this
 
 function App() {
   return (
     <>
+      <FlowerAnimation />
+
       <Navbar />
 
-      {/* Add IDs for smooth navigation */}
       <main>
         <section id="home">
           <Hero />
         </section>
+
         <section id="about">
-          <About/>
+          <About />
         </section>
 
         <section id="services">
