@@ -9,7 +9,6 @@ const services = [
       "Bleach",
       "Luxury Facials / Rituals",
       "Clean Ups",
-      "Body Polishing / Rejuvenation",
     ],
   },
   {
