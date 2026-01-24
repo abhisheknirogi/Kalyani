@@ -1,6 +1,6 @@
 import React from "react";
 
-const whatsappNumber = "919876543210"; // 🔁 replace with real number
+const whatsappNumber = "9380132306"; // 🔁 replace with real number
 
 const services = [
   {
@@ -80,7 +80,7 @@ const services = [
 ];
 
 const createWhatsAppLink = (serviceName) => {
-  const message = `Hello, I would like to book the "${serviceName}" service. Please share the details.`;
+  const message = `Hello, I would like to book the ${serviceName} service. Please share the details.`;
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     message
   )}`;
@@ -102,18 +102,18 @@ const Services = () => {
 
               <ul>
                 {service.items.map((item, i) => (
-                  <li key={i}>
-                    <a
-                      href={createWhatsAppLink(item)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="service-link"
-                    >
-                      {item}
-                    </a>
-                  </li>
+                  <li key={i}>{item}</li>
                 ))}
               </ul>
+
+              <a
+                href={createWhatsAppLink(service.category)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-small"
+              >
+                Book Now
+              </a>
             </div>
           ))}
         </div>
