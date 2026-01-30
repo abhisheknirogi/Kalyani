@@ -7,7 +7,7 @@ export default function Contact() {
         <h2 className="section-title">Contact</h2>
 
         <p className="contact-subtext">
-          Ready to book a professional saree draping service?
+         Ready to get styled by professionals? Book your salon appointment today.
         </p>
 
         <a
