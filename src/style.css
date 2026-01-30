@@ -21,7 +21,6 @@
 /* =========================
    RESET
 ========================= */
-
 * {
   margin: 0;
   padding: 0;
@@ -38,9 +37,8 @@ body {
 }
 
 /* =========================
-   LAYOUT
+   CONTAINER
 ========================= */
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -48,9 +46,8 @@ body {
 }
 
 /* =========================
-   NAVBAR (FIXED & STABLE)
+   NAVBAR
 ========================= */
-
 .navbar {
   position: fixed;
   top: 0;
@@ -95,12 +92,41 @@ body {
 }
 
 /* =========================
-   HERO (FROM CODE 2)
+   HAMBURGER
 ========================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================
+   HERO
+========================= */
 .hero {
   min-height: 100vh;
-  padding-top: 72px; /* FIX for navbar overlap */
+  padding-top: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,10 +157,6 @@ body {
   margin-bottom: 32px;
 }
 
-/* =========================
-   BUTTONS (FROM CODE 1)
-========================= */
-
 .btn,
 .hero .cta {
   display: inline-block;
@@ -157,7 +179,6 @@ body {
 /* =========================
    SECTIONS
 ========================= */
-
 section {
   padding: 90px 0;
 }
@@ -173,7 +194,6 @@ section {
 /* =========================
    SERVICES
 ========================= */
-
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -209,7 +229,6 @@ section {
 /* =========================
    GALLERY
 ========================= */
-
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -218,7 +237,7 @@ section {
 
 .gallery-grid img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4/3;
   object-fit: cover;
   border-radius: 12px;
   box-shadow: var(--shadow-sm);
@@ -232,7 +251,6 @@ section {
 /* =========================
    ABOUT
 ========================= */
-
 .about-section {
   background: #fff;
   text-align: center;
@@ -246,10 +264,13 @@ section {
   color: var(--text-light);
 }
 
+.about-section p strong {
+  color: var(--primary);
+}
+
 /* =========================
    RESPONSIVE
 ========================= */
-
 @media (max-width: 1024px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -266,6 +287,30 @@ section {
   }
 
   .nav-links {
-    display: none; /* You can add hamburger JS later */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 72px;
+    right: 0;
+    width: 220px;
+    background: var(--navbar-bg);
+    padding: 16px 0;
+    border-radius: 0 0 14px 14px;
+    box-shadow: 0 16px 30px rgba(0,0,0,0.25);
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    z-index: 2000;
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .hamburger {
+    display: flex;
   }
 }
