@@ -292,30 +292,31 @@ section {
 
   /* Navbar hamburger menu adjustments */
   .nav-links {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 72px;
-    left: 50%; /* center horizontally */
-    width: 220px;
-    background: var(--navbar-bg);
-    padding: 16px 0;
-    border-radius: 0 0 14px 14px;
-    box-shadow: 0 16px 30px rgba(0,0,0,0.25);
-    transform: translateX(-50%) translateY(-10px); /* center & initial slide-up */
-    opacity: 0;
-    pointer-events: none;
-    transition: transform 0.25s ease, opacity 0.25s ease;
-    z-index: 2000;
-    align-items: center; /* center menu items */
-  }
+  display: flex;
+  flex-direction: column;
+  position: fixed; /* covers viewport */
+  top: 72px;
+  left: 50%;
+  width: 80%;       /* scales better */
+  max-width: 300px;
+  background: var(--navbar-bg);
+  padding: 16px 0;
+  border-radius: 0 0 14px 14px;
+  box-shadow: 0 16px 30px rgba(0,0,0,0.25);
+  transform: translateX(-50%) translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  z-index: 2000;
+  align-items: center;
+}
 
-  /* Open state */
-  .nav-links.open {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
+.nav-links.open {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
 
   /* Hamburger icon display */
   .hamburger {
