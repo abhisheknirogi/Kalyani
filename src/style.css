@@ -271,6 +271,8 @@ section {
 /* =========================
    RESPONSIVE
 ========================= */
+
+/* Services grid adjustments */
 @media (max-width: 1024px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -278,38 +280,44 @@ section {
 }
 
 @media (max-width: 768px) {
+  /* Services grid becomes single column */
   .services-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Hero heading size adjustment */
   .hero h1 {
     font-size: 2.5rem;
   }
 
+  /* Navbar hamburger menu adjustments */
   .nav-links {
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 72px;
-    right: 0;
+    left: 50%; /* center horizontally */
     width: 220px;
     background: var(--navbar-bg);
     padding: 16px 0;
     border-radius: 0 0 14px 14px;
     box-shadow: 0 16px 30px rgba(0,0,0,0.25);
-    transform: translateY(-10px);
+    transform: translateX(-50%) translateY(-10px); /* center & initial slide-up */
     opacity: 0;
     pointer-events: none;
     transition: transform 0.25s ease, opacity 0.25s ease;
     z-index: 2000;
+    align-items: center; /* center menu items */
   }
 
+  /* Open state */
   .nav-links.open {
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
     opacity: 1;
     pointer-events: auto;
   }
 
+  /* Hamburger icon display */
   .hamburger {
     display: flex;
   }
