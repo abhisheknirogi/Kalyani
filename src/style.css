@@ -343,3 +343,11 @@ section {
 .whatsapp-icon {
   font-size: 1.2rem;
 }
+.whatsapp-btn {
+  background: #25d366;
+  color: #fff;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+}
