@@ -1,4 +1,5 @@
 import React from "react";
+import { FaPhone } from "react-icons/fa";
 
 const whatsappNumber = "919380132306"; // 🔁 replace with real number
 
@@ -79,7 +80,7 @@ const createWhatsAppLink = (serviceName) => {
 
 const Services = () => {
   return (
-    <section id="services">
+    <section id="services" className="services-section" aria-label="Salon services">
       <div className="container">
         <h2 className="section-title">Our Salon Services</h2>
         <p className="section-subtitle">
@@ -89,22 +90,35 @@ const Services = () => {
         <div className="services-grid">
           {services.map((service, index) => (
             <div className="service-card" key={index}>
-              <h3>{service.category}</h3>
+              <h3 id={`service-${index}`}>{service.category}</h3>
 
-              <ul>
+              <ul aria-labelledby={`service-${index}`}>
                 {service.items.map((item, i) => (
                   <li key={i}>{item}</li>
                 ))}
               </ul>
 
-              <a
-                href={createWhatsAppLink(service.category)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-small"
-              >
-                Book Now
-              </a>
+              <div style={{ marginTop: 16, display: "flex", gap: 8, alignItems: "center" }}>
+                <a
+                  href={createWhatsAppLink(service.category)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-small"
+                  aria-label={`Book ${service.category} via WhatsApp`}
+                >
+                  Book Now
+                </a>
+
+                <a
+                  href={`tel:+91${whatsappNumber}`}
+                  className="btn btn-small"
+                  aria-label={`Call to enquire about ${service.category}`}
+                  style={{ background: "transparent", border: "1px solid rgba(0,0,0,0.06)", color: "var(--text)" }}
+                >
+                  <FaPhone style={{ marginRight: 8 }} />
+                  Call
+                </a>
+              </div>
             </div>
           ))}
         </div>

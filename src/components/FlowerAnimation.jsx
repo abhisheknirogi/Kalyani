@@ -1,30 +1,37 @@
 import React, { useEffect } from "react";
 import "./flower.css";
 
-const FlowerAnimation = () => {
+const FlowerAnimation = ({ petalCount = 12, emoji = "🌸" }) => {
   useEffect(() => {
     const petals = document.querySelectorAll(".petal");
 
     petals.forEach((petal) => {
-      petal.style.left = Math.random() * 100 + "vw";
-      petal.style.animationDelay = Math.random() * 2 + "s";
+      const randomLeft = Math.random() * 100;
+      const randomDelay = Math.random() * 2;
+      const randomDuration = 3.5 + Math.random() * 1; // 3.5s to 4.5s
+      const randomRotation = Math.random() * 360;
+
+      petal.style.left = randomLeft + "vw";
+      petal.style.animationDelay = randomDelay + "s";
+      petal.style.animationDuration = randomDuration + "s";
+      petal.style.transform = `rotate(${randomRotation}deg)`;
     });
 
-    // Remove animation after it ends to save performance
+    // Remove petals after animation completes to save performance
     const timer = setTimeout(() => {
       petals.forEach((petal) => {
         petal.style.display = "none";
       });
-    }, 4500); // matches animation duration
+    }, 5500); // extended to account for variable duration
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className="flower-container">
-      {[...Array(12)].map((_, i) => (
+      {[...Array(petalCount)].map((_, i) => (
         <span key={i} className="petal">
-          🌸
+          {emoji}
         </span>
       ))}
     </div>

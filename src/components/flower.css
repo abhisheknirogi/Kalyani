@@ -6,6 +6,7 @@
   height: 100%;
   pointer-events: none;
   z-index: 9999;
+  overflow: hidden;
 }
 
 .petal {
@@ -14,9 +15,25 @@
   font-size: 22px;
   animation: fall 4s ease-in-out forwards;
   opacity: 0.9;
+  will-change: transform, opacity;
 }
 
 @keyframes fall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(60vh) translateX(30px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(120vh) translateX(0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Variation animations for more natural effect */
+@keyframes fall-slow {
   0% {
     transform: translateY(0) rotate(0deg);
     opacity: 1;
@@ -24,5 +41,14 @@
   100% {
     transform: translateY(120vh) rotate(360deg);
     opacity: 0;
+  }
+}
+
+@keyframes sway {
+  0%, 100% {
+    transform: translateX(-20px);
+  }
+  50% {
+    transform: translateX(20px);
   }
 }
