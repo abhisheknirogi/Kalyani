@@ -6,6 +6,7 @@ import Services from "./components/Services";
 import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
 import FlowerAnimation from "./components/FlowerAnimation"; // ✔️ Add this
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -35,6 +36,8 @@ function App() {
           <Contact />
         </section>
       </main>
+
+      <Footer />
     </>
   );
 }
