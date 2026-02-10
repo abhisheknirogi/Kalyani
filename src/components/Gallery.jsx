@@ -6,7 +6,6 @@ const Gallery = () => {
   const galleryImages = [
   { id: 1, src: "/files/1.jpeg", alt: "Bridal saree draping service" },
   { id: 2, src: "/files/2.jpeg", alt: "Party saree styling" },
-  { id: 3, src: "/files/3.jpeg", alt: "Traditional saree draping" },
   { id: 4, src: "/files/4.jpeg", alt: "Wedding saree arrangement" },
   { id: 5, src: "/files/5.jpeg", alt: "Festive saree styling" },
 ];
