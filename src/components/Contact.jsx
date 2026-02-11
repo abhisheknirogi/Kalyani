@@ -1,4 +1,4 @@
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 export default function Contact() {
   return (
@@ -11,6 +11,7 @@ export default function Contact() {
         </p>
 
         <div className="contact-links">
+          {/* WhatsApp Button */}
           <a
             className="btn contact-btn whatsapp-btn"
             target="_blank"
@@ -21,11 +22,26 @@ export default function Contact() {
             <FaWhatsapp className="whatsapp-icon" />
             Book on WhatsApp
           </a>
+
+          {/* Instagram Button */}
+          <a
+            className="btn contact-btn instagram-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.instagram.com/beauty5_box.official_acc?igsh=NTZudWd0Z2l5cmUw"
+            aria-label="Contact us on Instagram"
+          >
+            <FaInstagram className="instagram-icon" />
+            Message us on Instagram
+          </a>
         </div>
 
         <p style={{ marginTop: "24px", fontSize: "0.95rem", color: "var(--text-light)" }}>
           <strong>Call us:</strong>{" "}
-         <a href="tel:+919380132306" style={{ color: "var(--primary)", textDecoration: "none", cursor: "pointer" }}>
+          <a
+            href="tel:+919380132306"
+            style={{ color: "var(--primary)", textDecoration: "none", cursor: "pointer" }}
+          >
             +91 93801 32306
           </a>
         </p>
