@@ -46,7 +46,7 @@
     return (
       <nav className="navbar">
         <div className="container navbar-content">
-          <h2 className="brand">Beauty Box </h2>
+          <h2 className="brand">Glow n'Bride </h2>
 
           <div className={`nav-links ${isOpen ? "open" : ""}`}>
             {links.map((link) => (
