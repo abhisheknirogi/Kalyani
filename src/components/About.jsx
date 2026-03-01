@@ -12,6 +12,11 @@ function About() {
           weddings, receptions, photoshoots, and special occasions.
         </p>
 
+        <p className="highlight">
+          🎉 Trusted by over <strong>25+ happy clients</strong> who love our
+          attention to detail and personalized care.
+        </p>
+
         <p>
           We also provide <strong>home service exclusively for saree draping</strong>{" "}
           across Bangalore and nearby rural districts (additional charges
