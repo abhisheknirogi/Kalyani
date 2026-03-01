@@ -278,6 +278,8 @@ body {
   overflow: hidden;
   min-height: 48px;
   min-width: 120px;
+  /* ensure spacing when placed above hero text */
+  margin-bottom: 24px;
 }
 
 .btn::before,
